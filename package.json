@@ -1,0 +1,23 @@
+{
+  "name": "multi-twitch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maks0u/multi-twitch.git"
+  },
+  "author": "Maks0u",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maks0u/multi-twitch/issues"
+  },
+  "homepage": "https://github.com/Maks0u/multi-twitch#readme",
+  "dependencies": {
+    "winston": "^3.8.2"
+  }
+}
