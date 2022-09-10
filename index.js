@@ -5,6 +5,6 @@ const streamers = process.argv.slice(2);
 let pos = 0;
 streamers.forEach((n) => {
     const s = new Stream(n);
-    s.play(pos);
+    s.playShell(pos);
     pos++;
 });

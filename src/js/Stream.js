@@ -13,7 +13,11 @@ export default class Stream {
             this.getMediaURL()
                 .then((source) => {
                     Logger.debug(source);
-                    resolve(ChildProcess.exec(`ffplay -noborder -top ${top} -left ${left} -x ${width} -y ${height} ${source}`));
+                    resolve(
+                        ChildProcess.exec(
+                            `ffplay -noborder -top ${top} -left ${left} -x ${width} -y ${height} ${source}`
+                        )
+                    );
                 })
                 .catch((e) => reject(e));
         });
@@ -26,5 +30,12 @@ export default class Stream {
                 if (stdout) resolve(stdout);
             });
         });
+    }
+    playShell(position) {
+        const { top, left, width, height } = new Position(position).getCoordinates();
+        Logger.debug(`${this.name} ${top} ${left} ${width} ${height}`);
+        ChildProcess.exec(
+            `youtube-dl -f 480p ${this.URL.href} -o - | ffplay -noborder -top ${top} -left ${left} -`
+        );
     }
 }
